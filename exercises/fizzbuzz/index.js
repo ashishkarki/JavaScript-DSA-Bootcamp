@@ -12,6 +12,33 @@
 //   4
 //   buzz
 
-function fizzBuzz(n) {}
+function fizzBuzz(n) {
+    // SOLUTION 1: 
+    // *! Grider's recommended approach
+    // for (let i = 1; i <= n; i++) {
+    //     if (i % 3 == 0) {
+    //         if (i % 5 == 0) {
+    //             console.log(`fizzbuzz`)
+    //         } else {
+    //             console.log(`fizz`)
+    //         }
+    //     } else if (i % 5 == 0) {
+    //         console.log(`buzz`)
+    //     } else {
+    //         console.log(i)
+    //     }
+    // }
 
-module.exports = fizzBuzz;
+    // SOLUTION 2 : BIT MORE FANCY IF NEEDED
+    for (let i = 1; i <= n; i++) {
+        let output = ''
+
+        if (i % 3 == 0) output += 'fizz'
+        if (i % 5 == 0) output += 'buzz'
+
+        // if output is empty, print the number itself
+        console.log(output || i)
+    }
+}
+
+module.exports = fizzBuzz
