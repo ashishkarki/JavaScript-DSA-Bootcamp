@@ -8,7 +8,7 @@
 // Example:
 //   fib(4) === 3
 
-function fib(n) {
+function slowFib(n) {
     if (n == 0 || n == 1) {
         return n
     }
@@ -41,7 +41,28 @@ function fib(n) {
         return n
     }
 
-    return fib(n - 1) + fib(n - 2)
+    return fib(n - 1) + fib(n - 2) // here we are calling the memoized version of fib and not the slowFib Fx above
 }
+
+/// useful read: https://www.freecodecamp.org/news/understanding-memoize-in-javascript-51d07d19430e/
+function memoize(fn) {
+    //console.log(`memoize called with ${ fn }`)
+    const cache = {}
+
+    return function (...args) {
+        //console.log(`args is ${ args }`)
+        if (cache[ args ]) {
+            //console.log(`cache hit: ${ JSON.stringify(cache) } and return is ${ cache[ args ] }`)
+            return cache[ args ]
+        }
+
+        const result = fn.apply(this, args)
+        cache[ args ] = result
+
+        return result
+    }
+}
+
+const fib = memoize(slowFib)
 
 module.exports = fib
