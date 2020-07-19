@@ -11,3 +11,6 @@
    -- (iterative solution): O(n),
    -- (recursive solution): exponential => 2^n
    -- (memoized solution): O(n),
+5. Queue (using JS array)
+   -- enqueue (add at the end): O(1)
+   -- dequeue (remove from start): O(n)
