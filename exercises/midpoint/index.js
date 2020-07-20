@@ -12,6 +12,18 @@
 //   l.insertLast('c')
 //   midpoint(l); // returns { data: 'b' }
 
-function midpoint(list) {}
+function midpoint(list) {
+    let slow = list.head
+    let fast = list.head
 
-module.exports = midpoint;
+    // check if the next two nodes from fast are not null
+    while (fast.next && fast.next.next) {
+        // slow advances by 1 node, fast by 2 nodes
+        slow = slow.next
+        fast = fast.next.next
+    }
+
+    return slow
+}
+
+module.exports = midpoint

@@ -17,3 +17,5 @@
 6. Stack (using JS array) is LIFO or FILO
    -- push (add at the end): O(1)
    -- pop (remove from the end): O(1)
+7. LinkedList
+   -- add
