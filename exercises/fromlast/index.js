@@ -11,6 +11,24 @@
 //    list.insertLast('d');
 //    fromLast(list, 2).data // 'b'
 
-function fromLast(list, n) {}
+function fromLast(list, n) {
+    let slow = list.head
+    let fast = list.head
 
-module.exports = fromLast;
+    // first phase, slow is unchanged, fast moves by n nodes
+    while (n > 0) {
+        fast = fast.next
+        n--
+    }
+
+    // second phase onwards, both fast and slow move by 1 node each; until fast reaches the last node
+    while (fast.next) {
+        slow = slow.next
+        fast = fast.next
+    }
+
+    // when fast reaches the last node, the slow node points to the nth node from last node`
+    return slow
+}
+
+module.exports = fromLast
