@@ -17,5 +17,7 @@
 6. Stack (using JS array) is LIFO or FILO
    -- push (add at the end): O(1)
    -- pop (remove from the end): O(1)
-7. LinkedList
-   -- add
+7. Sorting (worst case)
+   -- Bubble sort: n^2
+   -- Selection sort: n^2
+   -- Merge sort: n\*log(n)
